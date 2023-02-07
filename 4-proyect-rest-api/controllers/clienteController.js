@@ -68,7 +68,7 @@ exports.deleteCliente = async (req, res, next) => {
     
     try {
         const clienteByID = await Clientes.findOneAndDelete({ _id : req.params.idCliente});
-        res.json({mensaje: 'Cliente ha sido removido con exito!'});    
+        res.json({mensaje: `El cliente ${clienteByID} ha sido removido con exito!`});    
     } catch (error) {
         console.log(error);
         next();
